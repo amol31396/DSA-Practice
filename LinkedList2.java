@@ -60,7 +60,9 @@ public class LinkedList2{
 		current.next=newNode;
 	}
 		
-	Node reverse(){
+	Node reverseList(Node head){
+		if(head==null)
+			return head;
         Node current = head;
 		Node prev = null;
         Node next = null;
@@ -73,7 +75,7 @@ public class LinkedList2{
         return prev;
     }
 	
-	void display(){
+	void display(Node head){
 		Node current=head;
 		if(current==null){
 			System.out.println("List is empty");
@@ -92,27 +94,26 @@ public class LinkedList2{
 	
 	public static void main(String[] args){
 		LinkedList2 list = new LinkedList2();
-		list.display();
+		// list.display();
 		list.addNode(10);
-		list.display();
+		// list.display();
 		list.addNode(20);
-		list.display();
+		// list.display();
 		list.addNode(30);
-		list.display();
-		list.addNode(40);
-		list.display();
+		list.display(list.head);
+		// list.addNode(40);
+		// list.display();
 		// list.insertAtBeginning(5);
 		// list.display();
 		// list.addNode(50);
 		// list.display();
-		list.insertAt(2,55);
+		// list.insertAt(2,55);
 		// list.display();
 		// list.deleteAt(4);
 		// list.display();
 		// list.display();
 		// list.deleteAtLast(2);
-		// list.display();
-		Node reverseHead=list.reverse();
-		list.display();
+		Node reverseHead=list.reverseList(list.head);
+		list.display(reverseHead);
 	}
 }
